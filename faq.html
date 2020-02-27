@@ -1,0 +1,48 @@
+---
+layout: page
+title: CORS FAQ
+permalink: /faq
+css-class: faq
+---
+
+<h1>CORS FAQ</h1>
+
+<nav class="page-index">
+  <ul>
+  {% for collection in site.collections %}
+    {% if collection.label == "faq" %}
+      {% for file in collection.order %}
+        {% for doc in collection.docs %}
+          {% if doc.path contains file %}
+            <li><a href="/faq#{{ doc.path | replace: "_faq/", "" | replace: ".md", "" }}">{{ doc.question }}</a></li>
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    {% endif  %}
+  {% endfor %}
+  </ul>
+</nav>
+
+<!-- The 'order' feature was only added in Jekyll 4.0.0, so we have to implement it manually in earlier versions -->
+{% for collection in site.collections %}
+  {% if collection.label == "faq" %}
+    {% for file in collection.order %}
+      {% for doc in collection.docs %}
+        {% if doc.path contains file %}
+<section id="{{ doc.path | replace: "_faq/", "" | replace: ".md", "" }}">
+<h3>
+  <a href="/faq#{{ doc.path | replace: "_faq/", "" | replace: ".md", "" }}">{{ doc.question }}</a>
+</h3>
+{{ doc.content }}
+</section>
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  {% endif  %}
+{% endfor %}
+
+<section>
+  <p>
+    You can suggest improvements to this page via <a href="{{ site.repository }}/issues">GitHub</a>.
+  </p>
+</section>

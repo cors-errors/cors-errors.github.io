@@ -1,0 +1,28 @@
+.error-messages {
+  .page-index {
+    h3 {
+      background: #373;
+      color: #fff;
+      margin: -20px -20px 20px;
+      padding: 10px;
+      text-shadow: 0 1px 0 #000;
+    }
+  }
+
+  section {
+    position: relative;
+
+    > a:first-child {
+      left: -2em;
+      padding: 0.5em 0;
+      position: absolute;
+      text-align: center;
+      width: 30px;
+    }
+  }
+
+  .allow-wrap {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+}

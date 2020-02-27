@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{ page.title }}</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Open+Sans:400,400i,700,700i&display=swap" rel="stylesheet">
+  <link href="/css/site.css" rel="stylesheet">
+</head>
+<body>
+{% include header.html %}
+<main class="wrap {{ page.css-class }}">
+{{ content }}
+</main>
+{% include footer.html %}
+</body>
+<script src="/js/section-highlighter.js"></script>
+</html>

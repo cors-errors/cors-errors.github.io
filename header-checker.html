@@ -1,0 +1,94 @@
+---
+layout: page
+title: CORS Header Checker
+permalink: /header-checker
+css-class: header-checker
+---
+
+<h1>CORS Header Checker</h1>
+<p>
+  This tool will check the headers for a CORS request and attempt to determine whether they are set correctly.
+</p>
+<p>
+  It is recommended that you use either <strong>Chrome</strong> or <strong>Firefox</strong> to copy the headers, even
+  if you're only having problems in other browsers.
+</p>
+<p>
+  You can suggest improvements or report bugs via <a href="{{ site.repository }}/issues">GitHub</a>.
+</p>
+<section>
+  <div class="flex-row">
+    <div class="number-circle" id="number-1">1</div>
+    <div class="rh-col-wrap">
+      <h4>Request headers:</h4>
+      <p>
+        Find the request in the <strong>Network</strong> section of your browser's developer tools. Right-click on the
+        request and copy the <strong>Request</strong> headers. Paste them into the box below.
+      </p>
+      <p>
+        <em>Example:</em>
+      </p>
+      <pre>OPTIONS /api-path HTTP/1.1
+Host: localhost:3000
+Access-Control-Request-Method: POST
+Origin: http://localhost:8080</pre>
+    </div>
+  </div>
+  <div class="flex-row">
+    <div class="marker" id="request-marker"></div>
+    <div class="rh-col-wrap">
+      <textarea id="request"></textarea>
+      <div id="request-errors" class="error"></div>
+    </div>
+  </div>
+  <hr>
+  <div class="flex-row">
+    <div class="number-circle" id="number-2">2</div>
+    <div class="rh-col-wrap">
+      <h4>Response headers:</h4>
+      <p>
+        Right-click again on the same request but this time copy the <strong>Response</strong> headers. Paste them
+        into the box below.
+      </p>
+      <p>
+        <em>Example:</em>
+      </p>
+      <pre>HTTP/1.1 200 OK
+Access-Control-Allow-Origin: http://localhost:8080</pre>
+    </div>
+  </div>
+  <div class="flex-row">
+    <div class="marker" id="response-marker"></div>
+    <div class="rh-col-wrap">
+      <textarea id="response"></textarea>
+      <div id="response-errors" class="error"></div>
+    </div>
+  </div>
+  <hr>
+  <div class="flex-row">
+    <div class="number-circle" id="number-3">3</div>
+    <div class="rh-col-wrap">
+      <h4>withCredentials / credentials = "include":</h4>
+      <p>
+        If you're setting the <code>withCredentials</code> flag on the request then check the box below. If you aren't
+        sure, leave it unchecked.
+      </p>
+      <div>
+        <input id="with-credentials" type="checkbox">
+        <label for="with-credentials">withCredentials / credentials = "include"</label>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <p>
+    Once you've completed all three steps you can view the analysis in the next section.
+  </p>
+</section>
+<section id="report">
+  <h3>Request Analysis</h3>
+  <div id="request-out"></div>
+  <hr>
+  <h3>Response Analysis</h3>
+  <div id="response-out"></div>
+</section>
+<script src="/js/header-checker.js"></script>

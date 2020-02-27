@@ -1,0 +1,112 @@
+---
+layout: page
+title: CORS Error Messages
+permalink: /error-messages
+css-class: error-messages
+---
+
+<h1>CORS Error Messages</h1>
+
+<section>
+  <p>
+    The error messages listed below all come from <em>Chrome</em>. For more information about CORS error messages in
+    <em>Firefox</em> see:
+  </p>
+
+  <p>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors">https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors</a>
+  </p>
+</section>
+
+<section>
+  <p>
+    The first line of a CORS error in Chrome will typically look something like this:
+  </p>
+
+  <blockquote class="error">
+    Access to XMLHttpRequest at 'http://localhost:3000/api' from origin 'http://localhost:8080' has been blocked by CORS
+    policy:
+  </blockquote>
+
+  <p>
+    The exact form of the message will depend on the request you're attempting.
+  </p>
+
+  <p>
+    Requests initiated using <code>fetch</code> will start <code>Access to fetch</code> instead of
+    <code>Access to XMLHttpRequest</code>. The URL <code>http://localhost:3000/api</code> will be the URL of the
+    cross-origin resource you tried to access. The origin, <code>http://localhost:8080</code>, will be the origin of the
+    current page. Usually that'll be the first part of the URL in your browser's address bar.
+  </p>
+
+  <p>
+    If the request you're attempting uses HTTP redirects then you may get a longer version of this opening line:
+  </p>
+
+  <blockquote class="error">
+    Access to XMLHttpRequest at 'http://localhost:3000/new-api' (redirected from 'http://localhost:3000/old-api') from
+    origin 'http://localhost:8080' has been blocked by CORS policy:
+  </blockquote>
+
+  <p>
+    When using redirects, all the requests must successfully pass the CORS checks. The error message indicates the initial
+    URL as well as the URL that failed. The initial request, and any intermediate redirects, must have passed the CORS
+    checks or the final request wouldn't have even been attempted.
+  </p>
+
+  <p>
+    Generally it is the next part of the error message that reveals why the request failed the CORS check. Those messages
+    are listed below.
+  </p>
+
+  <p>
+    If you want to see how the Chrome error messages are built take a look at the source code (not as scary as it sounds):
+  </p>
+
+  <p>
+    <a class="allow-wrap" href="https://cs.chromium.org/chromium/src/third_party/blink/renderer/platform/loader/cors/cors_error_string.cc">https://cs.chromium.org/chromium/src/third_party/blink/renderer/platform/loader/cors/cors_error_string.cc</a>
+  </p>
+</section>
+
+<nav class="page-index">
+  <h3>Chrome CORS Error Messages</h3>
+
+  <ul>
+  {% for collection in site.collections %}
+    {% if collection.label == "error-messages" %}
+      {% for file in collection.order %}
+        {% for doc in collection.docs %}
+          {% if doc.path contains file %}
+<li id="index-{{ doc.path | replace: "_error-messages/", "" | replace: ".md", "" }}"><a href="/error-messages#{{ doc.path | replace: "_error-messages/", "" | replace: ".md", "" }}">{{ doc.message }}</a></li>
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    {% endif  %}
+  {% endfor %}
+  </ul>
+</nav>
+
+<!-- The 'order' feature was only added in Jekyll 4.0.0, so we have to implement it manually in earlier versions -->
+{% for collection in site.collections %}
+  {% if collection.label == "error-messages" %}
+    {% for file in collection.order %}
+      {% for doc in collection.docs %}
+        {% if doc.path contains file %}
+<section id="{{ doc.path | replace: "_error-messages/", "" | replace: ".md", "" }}">
+  <a href="/error-messages#{{ doc.path | replace: "_error-messages/", "" | replace: ".md", "" }}">#</a>
+  <blockquote class="error">
+    {{ doc.message }}
+  </blockquote>
+  {{ doc.content }}
+</section>
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  {% endif  %}
+{% endfor %}
+
+<section>
+  <p>
+    You can suggest improvements to this page via <a href="{{ site.repository }}/issues">GitHub</a>.
+  </p>
+</section>

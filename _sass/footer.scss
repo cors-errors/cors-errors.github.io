@@ -1,0 +1,10 @@
+.footer {
+  background: #eee;
+  border-top: 1px solid #ccc;
+  display: flex;
+  padding: 10px;
+
+  :first-child {
+    flex: auto;
+  }
+}

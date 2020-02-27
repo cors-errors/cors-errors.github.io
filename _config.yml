@@ -1,0 +1,60 @@
+title: cors-errors.info
+description: Help with CORS errors
+repository: https://github.com/cors-errors/cors-errors.github.io
+sass:
+  style: compressed
+exclude:
+- CNAME
+- Gemfile
+- Gemfile.lock
+- LICENSE
+- README.md
+collections:
+  error-messages:
+    order:
+      - e2a2.md
+      - f5ab.md
+      - d897.md
+      - a384.md
+      - dab3.md
+      - bbd3.md
+      - b78f.md
+      - d514.md
+      - da36.md
+      - f6e6.md
+      - efd0.md
+      - e048.md
+      - aa2f.md
+      - b435.md
+      - c0d3.md
+      - a2da.md
+      - aa0c.md
+      - bdb6.md
+  faq:
+    order:
+      - e9f4.md
+      - abe3.md
+      - d1a6.md
+      - b667.md
+      - f173.md
+      - a313.md
+      - b7f6.md
+      - b040.md
+      - e21d.md
+      - fcd5.md
+      - e9b8.md
+      - c3f4.md
+      - c381.md
+      - b7a4.md
+      - bb30.md
+      - a8d2.md
+      - ea74.md
+      - cdc8.md
+      - fdb1.md
+      - b1b0.md
+      - bae3.md
+      - b4d0.md
+      - b56b.md
+      - d926.md
+      - ccdf.md
+      - c320.md

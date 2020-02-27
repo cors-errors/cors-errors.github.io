@@ -1,0 +1,18 @@
+<header class="header">
+  <nav>
+    <a href="/"
+       class="site-link {% if page.url == '/' %}current{%- endif %}"
+    >cors-errors.info</a>
+    <a href="/faq"
+       class="link-button {% if page.url contains '/faq' %}current{%- endif %}"
+    >FAQ</a>
+    <a href="/header-checker"
+       class="link-button {% if page.url contains '/header-checker' %}current{%- endif %}"
+    >Header Checker</a>
+    <a href="/error-messages"
+       class="link-button {% if page.url contains '/error-messages' %}current{%- endif %}"
+    >Error Messages</a>
+    <!-- For spacing -->
+    <a href="/" class="site-link">cors-errors.info</a>
+  </nav>
+</header>

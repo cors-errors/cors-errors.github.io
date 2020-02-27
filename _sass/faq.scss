@@ -1,0 +1,31 @@
+.faq {
+  h3 {
+    background: #373;
+    color: #fff;
+    margin: -20px -20px 0;
+    padding: 10px;
+    text-shadow: 0 1px 0 #000;
+
+    a {
+      color: inherit;
+
+      &:not(:hover) {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      &::before {
+        color: #070;
+        content: "# ";
+        left: -1.2em;
+        position: absolute;
+        text-shadow: none;
+        width: 5em;
+      }
+
+      &:hover::before {
+        color: #040;
+      }
+    }
+  }
+}
