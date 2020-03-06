@@ -1,6 +1,7 @@
 title: cors-errors.info
 description: Help with CORS errors
 repository: https://github.com/cors-errors/cors-errors.github.io
+base-url: https://cors-errors.info
 sass:
   style: compressed
 exclude:

@@ -4,8 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>{{ page.title }}</title>
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Open+Sans:400,400i,700,700i&display=swap" rel="stylesheet">
-  <link href="/css/site.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Open+Sans:400,400i,700,700i&display=swap">
+  <link rel="stylesheet" href="/css/site.css">
+  {% unless page.url == '/404.html' %}
+  <link rel="canonical" href="{{ site.base-url }}{{ page.url }}">
+  {%- endunless %}
 </head>
 <body>
 {% include header.html %}
