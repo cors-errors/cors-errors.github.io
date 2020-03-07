@@ -174,6 +174,11 @@ setTimeout(() => {
           return
         }
 
+        if (origin === 'null') {
+          request.originHost = 'null'
+          return
+        }
+
         const match = origin.match(/^(https?):\/\/([^:]+)(?::(\d+))?$/)
 
         if (!match) {
@@ -319,14 +324,20 @@ setTimeout(() => {
       }, {
         header: 'Host',
 
-        both ({ error, hostHost, hostPort, info, message, originHost, originPort, getHeaderMessage }) {
+        both ({ error, getHeaderMessage, hostHost, hostPort, info, message, originHost, originPort, warn }) {
           const originMessage = getHeaderMessage('Origin')
 
           info(message)
           info(originMessage)
 
           // TODO: Further investigate the colon-prefixed HTTP/2 pseudo headers that are sent on some requests
-          if (originHost !== hostHost) {
+          if (originHost === 'null'){
+            warn(
+              `The special value 'null' is used when the real origin cannot be included on the request.`,
+              `It is not necessarily indicative of a problem but it may be related to any problems you are having.`,
+              `For more information consult the FAQ.`
+            )
+          } else if (originHost !== hostHost) {
             info(`As '${hostHost}' and '${originHost}' are not the same a CORS request is required.`)
           } else if (hostPort) {
             if (hostPort === originPort) {
@@ -1069,12 +1080,22 @@ setTimeout(() => {
                 info(`\u2022 The cookie domain is not set. It will default to '${cookie.domainPattern}'.`)
               }
 
-              info(`\u2022 The page domain is '${originHost}'.`)
+              const sameDomain = cookie.sameDomain
 
-              if (cookie.sameDomain) {
-                info(`\u2022 This is a same-domain cookie: the cookie domain matches the page domain.`)
+              if (originHost === 'null') {
+                info(`\u2022 As the Origin header is 'null' it isn't possible for this tool to determine the page domain.`)
+                info(`\u2022 As we don't know the page domain we are going to assume this is a cross-domain cookie.`)
               } else {
-                info(`\u2022 This is a cross-domain cookie: the cookie domain does not match the page domain.`)
+                info(`\u2022 The page domain is '${originHost}'.`)
+
+                if (sameDomain) {
+                  info(`\u2022 This is a same-domain cookie: the cookie domain matches the page domain.`)
+                } else {
+                  info(`\u2022 This is a cross-domain cookie: the cookie domain does not match the page domain.`)
+                }
+              }
+
+              if (!sameDomain) {
                 warn(`\u2022 Safari does not allow cross-domain cookies to be set using CORS requests.`)
               }
 
@@ -1086,7 +1107,7 @@ setTimeout(() => {
 
               let chromeWarning = false
 
-              if (!cookie.sameDomain) {
+              if (!sameDomain) {
                 if (cookie.sameSite) {
                   if (cookie.sameSite.toLowerCase() === 'none') {
                     if (!cookie.secure) {
