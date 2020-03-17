@@ -55,8 +55,10 @@ When using `withCredentials` the server response must include the header `Access
 otherwise the request will fail the CORS check. This header must also be included on the preflight response, if there is
 one.
 
-The use of `*` wildcards in CORS response headers is also prohibited when using `withCredentials`. So if you're using
-`Access-Control-Allow-Origin: *` you're going to have to change that to return the specific origin for the request.
+The use of `*` values in CORS response headers is also prohibited when using `withCredentials`. For
+`Access-Control-Allow-Origin` the value of the `Origin` request header should be used instead but only after it has been
+checked to ensure the origin can be trusted. See {% include faq-link.md faq="ffcc" %} for more information about why
+this matters.
 
 While Safari does support `withCredentials` it tends to have a stricter security policy than other browsers. If you need
 to use `withCredentials` then you should test in Safari sooner rather than later to check whether what you're trying to
@@ -68,3 +70,4 @@ Related:
 
 * {% include faq-link.md faq="cdc8" %}
 * {% include faq-link.md faq="d926" %}
+* {% include faq-link.md faq="ffcc" %}
