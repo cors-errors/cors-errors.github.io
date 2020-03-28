@@ -46,9 +46,7 @@ return the exact value of the `Origin` request header instead of `*`.
 Then there's the `SameSite` directive of `Set-Cookie` to consider. For *cross-domain* requests it needs to be set to
 `None` or the cookie will be ignored. Note that *cross-domain* isn't quite the same thing as *cross-origin*, we'll
 elaborate on that distinction shortly. In most browsers `None` is the default value but as of Chrome 80 this is
-changing:
-
-[https://www.chromium.org/updates/same-site](https://www.chromium.org/updates/same-site)
+changing, {% include external-link.html href="https://www.chromium.org/updates/same-site" %}.
 
 From February 2020 Chrome will be transitioning the default value to `Lax`, so `SameSite=None` will need to be set
 explicitly.

@@ -194,8 +194,8 @@ circumstances you can just use `Access-Control-Allow-Origin: *` instead.
 
 You might find these useful:
 
-* [https://w3c.github.io/webappsec-cors-for-developers/](https://w3c.github.io/webappsec-cors-for-developers/)
-* [https://portswigger.net/research/exploiting-cors-misconfigurations-for-bitcoins-and-bounties](https://portswigger.net/research/exploiting-cors-misconfigurations-for-bitcoins-and-bounties)
+* {% include external-link.html href="https://w3c.github.io/webappsec-cors-for-developers/" %}
+* {% include external-link.html href="https://portswigger.net/research/exploiting-cors-misconfigurations-for-bitcoins-and-bounties" %}
 
 ---
 

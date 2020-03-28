@@ -55,6 +55,31 @@ a:hover {
   color: #040;
 }
 
+a.external {
+  white-space: nowrap;
+
+  &::before {
+    /*
+      <svg xmlns="http://www.w3.org/2000/svg" height="12" width="12" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke="#070" fill="#070">
+        <polyline points="9,5 1,5 1,23 19,23 19,15" fill="none"/>
+        <polygon points="23,1 11,1 15,5 5,15 9,19 19,9 23,13"/>
+      </svg>
+    */
+    background: no-repeat url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMTIiIHdpZHRoPSIxMiIgdmlld0JveD0iMCAwIDI0IDI0IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZT0iIzA3MCIgZmlsbD0iIzA3MCI%2BPHBvbHlsaW5lIHBvaW50cz0iOSw1IDEsNSAxLDIzIDE5LDIzIDE5LDE1IiBmaWxsPSJub25lIi8%2BPHBvbHlnb24gcG9pbnRzPSIyMywxIDExLDEgMTUsNSA1LDE1IDksMTkgMTksOSAyMywxMyIvPjwvc3ZnPg==');
+    content: "";
+    display: inline-block;
+    height: 12px;
+    margin-right: 4px;
+    position: relative;
+    top: 1px;
+    width: 12px;
+  }
+
+  &:hover::before {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMTIiIHdpZHRoPSIxMiIgdmlld0JveD0iMCAwIDI0IDI0IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZT0iIzA0MCIgZmlsbD0iIzA0MCI+PHBvbHlsaW5lIHBvaW50cz0iOSw1IDEsNSAxLDIzIDE5LDIzIDE5LDE1IiBmaWxsPSJub25lIi8+PHBvbHlnb24gcG9pbnRzPSIyMywxIDExLDEgMTUsNSA1LDE1IDksMTkgMTksOSAyMywxMyIvPjwvc3ZnPg==');
+  }
+}
+
 del {
   opacity: 0.25;
 }
