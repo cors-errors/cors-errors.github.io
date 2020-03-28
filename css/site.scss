@@ -92,13 +92,14 @@ textarea,
 }
 
 pre {
+  align-items: flex-start;
   background: #f2f5ff;
-  background-image: repeating-linear-gradient(to right, transparent 0, transparent 20px, rgba(0, 0, 255, 0.05) 20px, rgba(0, 0, 255, 0.05) 21px), repeating-linear-gradient(to bottom, transparent 0, transparent 20px, rgba(0, 0, 255, 0.05) 20px, rgba(0, 0, 255, 0.05) 21px);
   border: 1px dashed #6889cc;
   box-shadow: 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.05);
   color: #000;
+  display: flex;
+  max-height: 400px;
   overflow: auto;
-  padding: 10px;
   white-space: pre;
 }
 
@@ -112,9 +113,11 @@ code {
   white-space: nowrap;
 
   pre & {
-    background: none;
+    background: #f2f5ff;
+    background-image: repeating-linear-gradient(to right, transparent 0, transparent 20px, rgba(0, 0, 255, 0.05) 20px, rgba(0, 0, 255, 0.05) 21px), repeating-linear-gradient(to bottom, transparent 0, transparent 20px, rgba(0, 0, 255, 0.05) 20px, rgba(0, 0, 255, 0.05) 21px);
     border: none;
-    padding: 0;
+    flex: auto;
+    padding: 10px;
     white-space: inherit;
   }
 }
@@ -195,7 +198,8 @@ section {
 }
 
 .dl,
-.s1 {
+.s1,
+.s2 {
   color: #040;
 }
 
