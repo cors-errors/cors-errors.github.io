@@ -17,12 +17,34 @@
     margin-left: 20px;
     white-space: nowrap;
 
+    &::before {
+      /*
+        <svg xmlns="http://www.w3.org/2000/svg" height="12" width="12" viewBox="0 0 20 20" fill="#fff">
+          <circle r="3" cx="10" cy="10"/>
+          <rect height="3" width="8" x="12" y="8.5"/>
+          <path d="M18.9303 5.5A10 10,0,1,0,18.9303 14.5L13.9686 14.5A6 6,0,1,1,13.9686 5.5Z"/>
+        </svg>
+      */
+      background: no-repeat url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMTIiIHdpZHRoPSIxMiIgdmlld0JveD0iMCAwIDIwIDIwIiBmaWxsPSIjZmZmIj48Y2lyY2xlIHI9IjMiIGN4PSIxMCIgY3k9IjEwIi8+PHJlY3QgaGVpZ2h0PSIzIiB3aWR0aD0iOCIgeD0iMTIiIHk9IjguNSIvPjxwYXRoIGQ9Ik0xOC45MzAzIDUuNUExMCAxMCwwLDEsMCwxOC45MzAzIDE0LjVMMTMuOTY4NiAxNC41QTYgNiwwLDEsMSwxMy45Njg2IDUuNVoiLz48L3N2Zz4=');
+      content: "";
+      display: inline-block;
+      height: 12px;
+      margin-right: 5px;
+      position: relative;
+      top: 2px;
+      width: 12px;
+    }
+
     &:last-child {
       visibility: hidden;
     }
 
     &:hover, &.current {
       color: #0c0;
+
+      &::before {
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMTIiIHdpZHRoPSIxMiIgdmlld0JveD0iMCAwIDIwIDIwIiBmaWxsPSIjMGMwIj48Y2lyY2xlIHI9IjMiIGN4PSIxMCIgY3k9IjEwIi8+PHJlY3QgaGVpZ2h0PSIzIiB3aWR0aD0iOCIgeD0iMTIiIHk9IjguNSIvPjxwYXRoIGQ9Ik0xOC45MzAzIDUuNUExMCAxMCwwLDEsMCwxOC45MzAzIDE0LjVMMTMuOTY4NiAxNC41QTYgNiwwLDEsMSwxMy45Njg2IDUuNVoiLz48L3N2Zz4=');
+      }
     }
   }
 
