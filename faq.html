@@ -3,6 +3,7 @@ layout: page
 title: CORS FAQ
 permalink: /faq
 css-class: faq
+html-meta: itemscope itemtype="https://schema.org/FAQPage"
 ---
 
 <h1>CORS FAQ</h1>
@@ -29,11 +30,13 @@ css-class: faq
     {% for file in collection.order %}
       {% for doc in collection.docs %}
         {% if doc.path contains file %}
-<section id="{{ doc.path | replace: "_faq/", "" | replace: ".md", "" }}">
+<section id="{{ doc.path | replace: "_faq/", "" | replace: ".md", "" }}" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <h3>
-  <a href="/faq#{{ doc.path | replace: "_faq/", "" | replace: ".md", "" }}">{{ doc.question }}</a>
+  <a href="/faq#{{ doc.path | replace: "_faq/", "" | replace: ".md", "" }}"><span itemprop="name">{{ doc.question }}</span></a>
 </h3>
-{{ doc.content }}
+<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+  <div class="section-body" itemprop="text">{{ doc.content }}</div>
+</div>
 </section>
         {% endif %}
       {% endfor %}
