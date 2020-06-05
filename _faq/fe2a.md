@@ -44,6 +44,6 @@ explicitly, though `Access-Control-Allow-Origin: *` can be used for genuinely op
 
 Related:
 
-* {% include faq-link.md faq="b667" %}
-* {% include faq-link.md faq="c320" %}
-* {% include faq-link.md faq="ffcc" %}
+* {% include faq-link.html faq="b667" %}
+* {% include faq-link.html faq="c320" %}
+* {% include faq-link.html faq="ffcc" %}

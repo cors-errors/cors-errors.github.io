@@ -22,5 +22,5 @@ A value of `*` can also be used as a wildcard in `Access-Control-Allow-Headers`.
 
 Related:
 
-* {% include faq-link.md faq="b7f6" %}
-* {% include faq-link.md faq="b040" %}.
+* {% include faq-link.html faq="b7f6" %}
+* {% include faq-link.html faq="b040" %}.

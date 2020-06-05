@@ -13,11 +13,11 @@ The best place to start with debugging this error is to check which status code 
 response body that provides further information.
 
 This can be tricky in browsers that don't show the preflight `OPTIONS` request separately in the developer tools. See
-{% include faq-link.md faq="b56b" %} for more information.
+{% include faq-link.html faq="b56b" %} for more information.
 
 The other thing to check is the request URL. Specifically check in the developer tools rather than in your code. Make
 sure the URL really is what you intended. Depending on how the server is configured there are several different status
 codes you might receive if the URL is wrong.
 
 Attempts to redirect to a different URL will typically show a different error message. See
-{% include error-link.md message="a2da" text="Redirect is not allowed for a preflight request" %}.
+{% include error-link.html message="a2da" text="Redirect is not allowed for a preflight request" %}.

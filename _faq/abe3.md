@@ -13,6 +13,6 @@ to be part of the *origin* when the browser decides whether or not to use CORS.
 
 Related:
 
-* {% include faq-link.md faq="d1a6" %}
-* {% include faq-link.md faq="b667" %}
-* {% include faq-link.md faq="f173" %}
+* {% include faq-link.html faq="d1a6" %}
+* {% include faq-link.html faq="b667" %}
+* {% include faq-link.html faq="f173" %}

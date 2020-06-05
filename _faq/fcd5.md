@@ -57,7 +57,7 @@ one.
 
 The use of `*` values in CORS response headers is also prohibited when using `withCredentials`. For
 `Access-Control-Allow-Origin` the value of the `Origin` request header should be used instead but only after it has been
-checked to ensure the origin can be trusted. See {% include faq-link.md faq="ffcc" %} for more information about why
+checked to ensure the origin can be trusted. See {% include faq-link.html faq="ffcc" %} for more information about why
 this matters.
 
 While Safari does support `withCredentials` it tends to have a stricter security policy than other browsers. If you need
@@ -68,6 +68,6 @@ do is actually allowed. For example, to set cookies you will need both origins t
 
 Related:
 
-* {% include faq-link.md faq="cdc8" %}
-* {% include faq-link.md faq="d926" %}
-* {% include faq-link.md faq="ffcc" %}
+* {% include faq-link.html faq="cdc8" %}
+* {% include faq-link.html faq="d926" %}
+* {% include faq-link.html faq="ffcc" %}

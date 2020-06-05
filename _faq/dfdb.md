@@ -52,4 +52,4 @@ need to access the response details in JavaScript code.
 
 Related:
 
-* {% include faq-link.md faq="e9b8" %}
+* {% include faq-link.html faq="e9b8" %}

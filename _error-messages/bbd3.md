@@ -19,4 +19,4 @@ returned with an explicit empty value.
 If the error message indicates that the current value is `'true, true'` then that suggests that the header is being
 returned twice.
 
-See also {% include faq-link.md faq="fcd5" %}.
+See also {% include faq-link.html faq="fcd5" %}.

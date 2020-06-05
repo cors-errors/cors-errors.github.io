@@ -12,6 +12,6 @@ error:
 </blockquote>
 
 This error specifically refers to the preflight `OPTIONS` request but is otherwise identical to
-{% include error-link.md message="dab3" text="an earlier error message" %}.
+{% include error-link.html message="dab3" text="an earlier error message" %}.
 
-If you are unclear what a preflight `OPTIONS` request is then see {% include faq-link.md faq="b7f6" %}.
+If you are unclear what a preflight `OPTIONS` request is then see {% include faq-link.html faq="b7f6" %}.

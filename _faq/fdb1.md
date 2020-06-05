@@ -25,10 +25,10 @@ privacy settings. At the time of writing the following URIs will get you to the 
 * **Firefox:** `about:preferences#privacy`
 
 Of course, the other reason why you may not be able to see the cookies in the developer tools is because no cookies are
-being set. See {% include faq-link.md faq="cdc8" %} for more information.
+being set. See {% include faq-link.html faq="cdc8" %} for more information.
 
 ---
 
 Related:
 
-* {% include faq-link.md faq="cdc8" %}
+* {% include faq-link.html faq="cdc8" %}

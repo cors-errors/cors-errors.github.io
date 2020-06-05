@@ -5,7 +5,7 @@ question: Why aren't my cookies working with CORS?
 There are several questions in one here:
 
 1. How can cookies be set using the `Set-Cookie` response header using CORS?
-2. {% include faq-link.md faq="fdb1" %}. This is so common it gets a separate question in the FAQ.
+2. {% include faq-link.html faq="fdb1" %}. This is so common it gets a separate question in the FAQ.
 3. Can CORS cookies be accessed from JavaScript using `document.cookie`?
 4. I've set the cookies but they aren't being included on subsequent CORS requests. Why?
 
@@ -23,7 +23,7 @@ middle later.
 
 If you're using `XMLHttpRequest` to make a CORS request then you'll need to set the `withCredentials` flag to `true`.
 For `fetch` the equivalent setting is `credentials: 'include'`. For more information on that see
-{% include faq-link.md faq="fcd5" %}.
+{% include faq-link.html faq="fcd5" %}.
 
 Once you've set this flag you'll likely see a number of errors and warnings in your browser's console. What follows
 below is mostly just an explanation of how to fix those errors.
@@ -98,7 +98,7 @@ Even Safari will allow cross-origin cookies to be set so long as they share a co
 
 If you've read all that and still can't figure out why your cookies aren't being set, try using our
 [CORS header checker](/header-checker) to check that you're setting the response headers correctly. Also take a look at
-{% include faq-link.md faq="fdb1" %}.
+{% include faq-link.html faq="fdb1" %}.
 
 #### Accessing a cookie with `document.cookie`
 
@@ -126,6 +126,6 @@ included on a cross-domain request from a different page.
 
 Related:
 
-* {% include faq-link.md faq="fdb1" %}
-* {% include faq-link.md faq="fcd5" %}
-* {% include faq-link.md faq="ffcc" %}
+* {% include faq-link.html faq="fdb1" %}
+* {% include faq-link.html faq="fcd5" %}
+* {% include faq-link.html faq="ffcc" %}

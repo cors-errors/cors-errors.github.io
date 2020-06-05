@@ -54,7 +54,7 @@ three types of ambient authority:
 1. Cookies.
 2. The `Authorization` header as part of HTTP authentication. This shouldn't be confused with using the `Authorization`
    header explicitly as a custom request header, which is not ambient authority. See
-   {% include faq-link.md faq="d926" %} for more information.
+   {% include faq-link.html faq="d926" %} for more information.
 3. TLS client certificates.
 
 These forms of ambient authority could have been left out of CORS altogether and some initial implementations didn't
@@ -176,7 +176,7 @@ potentially be compromised.
 
 #### *I read somewhere that `Access-Control-Allow-Origin: null` is potentially insecure. Why?*
 
-If you aren't familiar with the special origin value `null` then see {% include faq-link.md faq="fe2a" %}.
+If you aren't familiar with the special origin value `null` then see {% include faq-link.html faq="fe2a" %}.
 
 Part of the problem is that some developers mistakenly believe that returning `null` is equivalent to omitting the
 header altogether. A bit of basic testing may even seem to confirm that.
@@ -201,6 +201,6 @@ You might find these useful:
 
 Related:
 
-* {% include faq-link.md faq="fcd5" %}
-* {% include faq-link.md faq="d926" %}
-* {% include faq-link.md faq="fe2a" %}
+* {% include faq-link.html faq="fcd5" %}
+* {% include faq-link.html faq="d926" %}
+* {% include faq-link.html faq="fe2a" %}
