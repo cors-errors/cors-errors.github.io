@@ -27,7 +27,7 @@ the client by updating the URL to avoid the redirect altogether.
 
 ---
 
-Related:
+#### Related
 
 * {% include faq-link.html faq="c320" %}
 * {% include faq-link.html faq="b56b" %}

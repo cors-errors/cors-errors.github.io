@@ -39,7 +39,7 @@ html-meta: itemscope itemtype="https://schema.org/FAQPage"
   {% if doc.related %}
     <div class="related-questions">
       <hr>
-      <p>Related:</p>
+      <h4>Related</h4>
       <ul>
         {% for related in doc.related %}
           <li>{% include faq-link.html faq=related %}</li>
