@@ -15,7 +15,7 @@ html-meta: itemscope itemtype="https://schema.org/FAQPage"
       {% for file in collection.order %}
         {% for doc in collection.docs %}
           {% if doc.path contains file %}
-            <li><a href="/faq#{{ doc.path | replace: "_faq/", "" | replace: ".md", "" }}">{{ doc.question }}</a></li>
+            <li><a href="/faq#{{ doc.path | replace: "_faq/", "" | replace: ".md", "" }}">{{ doc.question | smartify }}</a></li>
           {% endif %}
         {% endfor %}
       {% endfor %}
@@ -32,7 +32,7 @@ html-meta: itemscope itemtype="https://schema.org/FAQPage"
         {% if doc.path contains file %}
 <section id="{{ doc.path | replace: "_faq/", "" | replace: ".md", "" }}" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <h3>
-  <a href="/faq#{{ doc.path | replace: "_faq/", "" | replace: ".md", "" }}"><span itemprop="name">{{ doc.question }}</span></a>
+  <a href="/faq#{{ doc.path | replace: "_faq/", "" | replace: ".md", "" }}"><span itemprop="name">{{ doc.question | smartify }}</span></a>
 </h3>
 <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
   <div class="answer-body" itemprop="text">{{ doc.content }}</div>

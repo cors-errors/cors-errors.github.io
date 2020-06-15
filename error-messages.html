@@ -26,18 +26,18 @@ css-class: error-messages
   </blockquote>
 
   <p>
-    The exact form of the message will depend on the request you're attempting.
+    The exact form of the message will depend on the request you’re attempting.
   </p>
 
   <p>
     Requests initiated using <code>fetch</code> will start <code>Access to fetch</code> instead of
     <code>Access to XMLHttpRequest</code>. The URL <code>http://localhost:3000/api</code> will be the URL of the
     cross-origin resource you tried to access. The origin, <code>http://localhost:8080</code>, will be the origin of the
-    current page. Usually that'll be the first part of the URL in your browser's address bar.
+    current page. Usually that’ll be the first part of the URL in your browser’s address bar.
   </p>
 
   <p>
-    If the request you're attempting uses HTTP redirects then you may get a longer version of this opening line:
+    If the request you’re attempting uses HTTP redirects then you may get a longer version of this opening line:
   </p>
 
   <blockquote class="error">
@@ -48,7 +48,7 @@ css-class: error-messages
   <p>
     When using redirects, all the requests must successfully pass the CORS checks. The error message indicates the initial
     URL as well as the URL that failed. The initial request, and any intermediate redirects, must have passed the CORS
-    checks or the final request wouldn't have even been attempted.
+    checks or the final request wouldn’t have even been attempted.
   </p>
 
   <p>
