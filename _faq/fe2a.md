@@ -1,5 +1,9 @@
 ---
 question: Why is my Origin 'null'?
+related:
+  - b667
+  - c320
+  - ffcc
 ---
 
 Under some circumstances the request header `Origin` can be set to the special value `null`.
@@ -39,11 +43,3 @@ may stop working in future. As there are many different ways for `Origin` to be 
 specific case on the server. The `Referer` header may still be available in some cases as a hint to what the `Origin`
 would have been but that isn't reliable either. Generally it is recommended not to allow access from `null` origins
 explicitly, though `Access-Control-Allow-Origin: *` can be used for genuinely open resources.
-
----
-
-Related:
-
-* {% include faq-link.html faq="b667" %}
-* {% include faq-link.html faq="c320" %}
-* {% include faq-link.html faq="ffcc" %}

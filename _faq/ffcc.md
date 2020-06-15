@@ -1,5 +1,9 @@
 ---
 question: What are the security implications of CORS?
+related:
+  - fcd5
+  - d926
+  - fe2a
 ---
 
 It's almost impossible to provide a comprehensive list but here are some of the common concerns.
@@ -196,11 +200,3 @@ You might find these useful:
 
 * {% include external-link.html href="https://w3c.github.io/webappsec-cors-for-developers/" %}
 * {% include external-link.html href="https://portswigger.net/research/exploiting-cors-misconfigurations-for-bitcoins-and-bounties" %}
-
----
-
-Related:
-
-* {% include faq-link.html faq="fcd5" %}
-* {% include faq-link.html faq="d926" %}
-* {% include faq-link.html faq="fe2a" %}

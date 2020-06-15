@@ -29,7 +29,8 @@
     }
   }
 
-  .section-body {
+  .answer-body,
+  .related-questions {
     > :last-child {
       margin-bottom: 0;
     }

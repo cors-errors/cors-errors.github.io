@@ -1,5 +1,7 @@
 ---
 question: What is an opaque response?
+related:
+  - e9b8
 ---
 
 If you're using the `fetch` API then you might have come across this message in Chrome:
@@ -47,9 +49,3 @@ something but whether or not it succeeds doesn't have any impact on the UI.
 
 Another use case is caching. The requests can be used to pre-populate caches for things like stylesheets where you don't
 need to access the response details in JavaScript code.
-
----
-
-Related:
-
-* {% include faq-link.html faq="e9b8" %}

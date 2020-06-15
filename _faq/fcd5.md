@@ -1,5 +1,9 @@
 ---
 question: What is withCredentials? How do I enable it?
+related:
+  - cdc8
+  - d926
+  - ffcc
 ---
 
 `withCredentials` is a flag that can be set on `XMLHttpRequest` for cross-origin requests. It is usually used to enable
@@ -63,11 +67,3 @@ this matters.
 While Safari does support `withCredentials` it tends to have a stricter security policy than other browsers. If you need
 to use `withCredentials` then you should test in Safari sooner rather than later to check whether what you're trying to
 do is actually allowed. For example, to set cookies you will need both origins to share the same domain.
-
----
-
-Related:
-
-* {% include faq-link.html faq="cdc8" %}
-* {% include faq-link.html faq="d926" %}
-* {% include faq-link.html faq="ffcc" %}

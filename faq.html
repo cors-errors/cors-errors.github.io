@@ -35,7 +35,18 @@ html-meta: itemscope itemtype="https://schema.org/FAQPage"
   <a href="/faq#{{ doc.path | replace: "_faq/", "" | replace: ".md", "" }}"><span itemprop="name">{{ doc.question }}</span></a>
 </h3>
 <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-  <div class="section-body" itemprop="text">{{ doc.content }}</div>
+  <div class="answer-body" itemprop="text">{{ doc.content }}</div>
+  {% if doc.related %}
+    <div class="related-questions">
+      <hr>
+      <p>Related:</p>
+      <ul>
+        {% for related in doc.related %}
+          <li>{% include faq-link.html faq=related %}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
 </div>
 </section>
         {% endif %}

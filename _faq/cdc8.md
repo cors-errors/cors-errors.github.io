@@ -1,5 +1,9 @@
 ---
 question: Why aren't my cookies working with CORS?
+related:
+  - fdb1
+  - fcd5
+  - ffcc
 ---
 
 There are several questions in one here:
@@ -121,11 +125,3 @@ only be a problem if the cookie was set by some other means.
 While Safari has tighter restrictions for setting cookies, the rules for including cookies on subsequent requests are
 much the same as for other browsers. So while a same-domain request may be required to set the cookie, it can then be
 included on a cross-domain request from a different page.
-
----
-
-Related:
-
-* {% include faq-link.html faq="fdb1" %}
-* {% include faq-link.html faq="fcd5" %}
-* {% include faq-link.html faq="ffcc" %}
