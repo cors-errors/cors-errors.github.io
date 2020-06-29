@@ -12,9 +12,6 @@ requests.
 The best place to start with debugging this error is to check which status code is coming back. There may also be a
 response body that provides further information.
 
-This can be tricky in browsers that don't show the preflight `OPTIONS` request separately in the developer tools. See
-{% include faq-link.html faq="b56b" %} for more information.
-
 The other thing to check is the request URL. Specifically check in the developer tools rather than in your code. Make
 sure the URL really is what you intended. Depending on how the server is configured there are several different status
 codes you might receive if the URL is wrong.
