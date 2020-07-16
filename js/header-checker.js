@@ -886,6 +886,22 @@ setTimeout(() => {
           }
         }
       }, {
+        preflight ({ getValue, warn }) {
+          const wildcardHeaders = [
+            'Access-Control-Allow-Methods',
+            'Access-Control-Allow-Headers'
+          ].filter(header => splitCommas(getValue(header)).includes('*'))
+
+          if (wildcardHeaders.length) {
+            warn(
+              `Older browsers may not support the use of '*' for ${joinQuoted(wildcardHeaders)}.`,
+              `Internet Explorer 11 did not include support for '*'.`,
+              `Safari introduced support in version 13 but many older devices are not able to upgrade to that version.`,
+              `You should test against your target browsers to confirm whether this is a problem for you.`
+            )
+          }
+        }
+      }, {
         header: 'Access-Control-Max-Age',
 
         preflight ({ info, message, missing, value, warn }) {
