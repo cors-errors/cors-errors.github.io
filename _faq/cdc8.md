@@ -76,7 +76,7 @@ At this point we need to go back to those muddy waters around origins and cookie
 Let's consider a website running at `http://localhost:8080` making AJAX requests to `http://localhost:3000`. The ports
 don't match so they have different *origins*. We're in CORS territory.
 
-However, a *cookie domain* is not the same thing as an *origin*. Cookies for both of these server will have a domain of
+However, a *cookie domain* is not the same thing as an *origin*. Cookies for both of these servers will have a domain of
 *localhost*. The port is ignored. So from a cookie-domain perspective they count as the same site.
 
 Keep in mind that cookies were introduced to the web a long time ago. If they were introduced from scratch today they
